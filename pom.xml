@@ -98,6 +98,28 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- checks dependencies for vulnerabilities -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>12.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <failBuildOnCVSS>11</failBuildOnCVSS>
+                    <!-- Generate all report formats -->
+                    <format>ALL</format>
+                    <!-- Don't use Nexus Analyzer -->
+                    <centralAnalyzerEnabled>false</centralAnalyzerEnabled>
+                    <failOnError>false</failOnError>
+                </configuration>
+            </plugin>
+            
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.1.1</version>
