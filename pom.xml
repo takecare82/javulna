@@ -119,7 +119,7 @@
                     <failOnError>false</failOnError>
                 </configuration>
             </plugin>
-            -->
+            
             <!-- static source code analysis -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
